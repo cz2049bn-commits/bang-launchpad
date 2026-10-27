@@ -1,0 +1,9 @@
+openfour.mjs is the unmodified read-only Binance Agentic Wallet skill helper.
+Source: https://github.com/binance/binance-skills-hub
+Commit: 96563daf34fa5a87af5d76c2f1107d697ae7ce07
+Path: skills/binance-web3/binance-agentic-wallet/scripts/agent-id-exclusive-token-launches.mjs
+Skill version: 1.15.0
+SHA-256: 15044335adc228286424988495e81f58343e7fe33e2b1f2f3946fe3f5627066a
+Runs in an isolated short-lived Node process for each quote to avoid shared RPC/block state.
+No credentials are passed. This helper never signs or broadcasts transactions.
+It is a server runtime dependency, not part of the public bang-connect skill ZIP.

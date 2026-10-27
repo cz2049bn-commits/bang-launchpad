@@ -1,0 +1,1104 @@
+[
+  {
+    "inputs": [],
+    "name": "BnbTransferFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FeatureDisabled",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidMktBps",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "taxRate",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidTaxRate",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "predictedAddress",
+        "type": "address"
+      }
+    ],
+    "name": "InvalidVanity",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyV3TaxTokenAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lastCreationTime",
+        "type": "uint256"
+      }
+    ],
+    "name": "RateLimitExceeded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TokenAddressMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      }
+    ],
+    "name": "TokenNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "quoteToken",
+        "type": "address"
+      }
+    ],
+    "name": "UnsupportedQuoteToken",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      }
+    ],
+    "name": "VaultFactoryNotRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      }
+    ],
+    "name": "VaultNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroPortalAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroTokenImplAddress",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "adapter",
+        "type": "address"
+      }
+    ],
+    "name": "AdapterRegistered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "auditor",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IVaultPortalTypes.RiskLevel",
+        "name": "riskLevel",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "ipfsCid",
+        "type": "string"
+      }
+    ],
+    "name": "AuditReportSubmitted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "auditor",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IVaultPortalTypes.RiskLevel",
+        "name": "riskLevel",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "ipfsCid",
+        "type": "string"
+      }
+    ],
+    "name": "FactoryAuditReportSubmitted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IVaultPortalTypes.VaultCategory",
+        "name": "category",
+        "type": "uint8"
+      }
+    ],
+    "name": "FactoryCategoryUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IVaultPortalTypes.FactoryPermissionPolicy",
+        "name": "policy",
+        "type": "uint8"
+      }
+    ],
+    "name": "FactoryPermissionPolicySet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IVaultPortalTypes.VaultCategory",
+        "name": "category",
+        "type": "uint8"
+      }
+    ],
+    "name": "FlapTaxVaultFactoryCategorySet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "enabled",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "official",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IVaultPortalTypes.RiskLevel",
+        "name": "riskLevel",
+        "type": "uint8"
+      }
+    ],
+    "name": "FlapTaxVaultFactoryRegistered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "vaultFactory",
+        "type": "address"
+      }
+    ],
+    "name": "FlapTaxVaultTokenCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "oldVault",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newVault",
+        "type": "address"
+      }
+    ],
+    "name": "TokenVaultRefreshed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IVaultPortalTypes.VaultCategory",
+        "name": "category",
+        "type": "uint8"
+      }
+    ],
+    "name": "VaultCategoryUpdated",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "offset",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "limit",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAuditReports",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "auditor",
+            "type": "address"
+          },
+          {
+            "internalType": "enum IVaultPortalTypes.RiskLevel",
+            "name": "riskLevel",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string",
+            "name": "ipfsCid",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IVaultPortalTypes.AuditReport[]",
+        "name": "reports",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "total",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      }
+    ],
+    "name": "getFactoryCategory",
+    "outputs": [
+      {
+        "internalType": "enum IVaultPortalTypes.VaultCategory",
+        "name": "category",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      }
+    ],
+    "name": "getFactoryPolicy",
+    "outputs": [
+      {
+        "internalType": "enum IVaultPortalTypes.FactoryPermissionPolicy",
+        "name": "policy",
+        "type": "uint8"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "policyData",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "string",
+        "name": "description",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      }
+    ],
+    "name": "getVault",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "vault",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "vaultFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "internalType": "bool",
+            "name": "isOfficial",
+            "type": "bool"
+          },
+          {
+            "internalType": "enum IVaultPortalTypes.RiskLevel",
+            "name": "riskLevel",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct IVaultPortalTypes.VaultInfo",
+        "name": "info",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      }
+    ],
+    "name": "getVaultCategory",
+    "outputs": [
+      {
+        "internalType": "enum IVaultPortalTypes.VaultCategory",
+        "name": "category",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "meta",
+            "type": "string"
+          },
+          {
+            "internalType": "enum IPortalCommonTypes.DexThreshType",
+            "name": "dexThresh",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "salt",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "taxRate",
+            "type": "uint16"
+          },
+          {
+            "internalType": "enum IPortalTypes.MigratorType",
+            "name": "migratorType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "quoteToken",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quoteAmt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "permitData",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "extensionID",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "extensionData",
+            "type": "bytes"
+          },
+          {
+            "internalType": "enum IPortalTypes.DEXId",
+            "name": "dexId",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum IPortalTypes.V3LPFeeProfile",
+            "name": "lpFeeProfile",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "taxDuration",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "antiFarmerDuration",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint16",
+            "name": "mktBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "deflationBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "dividendBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "lpBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minimumShareBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "vaultFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes",
+            "name": "vaultData",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IVaultPortalTypes.NewTaxTokenWithVaultParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "name": "newTaxTokenWithVault",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "meta",
+            "type": "string"
+          },
+          {
+            "internalType": "enum IPortalCommonTypes.DexThreshType",
+            "name": "dexThresh",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "salt",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "enum IPortalTypes.MigratorType",
+            "name": "migratorType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "quoteToken",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "quoteAmt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "permitData",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "extensionID",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "extensionData",
+            "type": "bytes"
+          },
+          {
+            "internalType": "enum IPortalTypes.DEXId",
+            "name": "dexId",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum IPortalTypes.V3LPFeeProfile",
+            "name": "lpFeeProfile",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint16",
+            "name": "buyTaxRate",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "sellTaxRate",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint64",
+            "name": "taxDuration",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "antiFarmerDuration",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint16",
+            "name": "mktBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "deflationBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "dividendBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "lpBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minimumShareBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "dividendToken",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "commissionReceiver",
+            "type": "address"
+          },
+          {
+            "internalType": "enum IPortalTypes.TokenVersion",
+            "name": "tokenVersion",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "vaultFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes",
+            "name": "vaultData",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IVaultPortalTypes.NewTokenV6WithVaultParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "name": "newTokenV6WithVault",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "salt",
+        "type": "bytes32"
+      }
+    ],
+    "name": "predictTaxTokenV1Address",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "predictedAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "refreshTokenVault",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "adapter",
+        "type": "address"
+      }
+    ],
+    "name": "registerAdapter",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "enabled",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "official",
+        "type": "bool"
+      },
+      {
+        "internalType": "enum IVaultPortalTypes.RiskLevel",
+        "name": "riskLevel",
+        "type": "uint8"
+      }
+    ],
+    "name": "registerVaultFactory",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "enabled",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "official",
+        "type": "bool"
+      },
+      {
+        "internalType": "enum IVaultPortalTypes.RiskLevel",
+        "name": "riskLevel",
+        "type": "uint8"
+      },
+      {
+        "internalType": "enum IVaultPortalTypes.VaultCategory",
+        "name": "category",
+        "type": "uint8"
+      }
+    ],
+    "name": "registerVaultFactory",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      }
+    ],
+    "name": "resetFactoryPolicy",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "internalType": "enum IVaultPortalTypes.VaultCategory",
+        "name": "category",
+        "type": "uint8"
+      }
+    ],
+    "name": "setFactoryCategory",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      },
+      {
+        "internalType": "enum IVaultPortalTypes.VaultCategory",
+        "name": "category",
+        "type": "uint8"
+      }
+    ],
+    "name": "setVaultCategory",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      },
+      {
+        "internalType": "enum IVaultPortalTypes.RiskLevel",
+        "name": "riskLevel",
+        "type": "uint8"
+      },
+      {
+        "internalType": "string",
+        "name": "ipfsCid",
+        "type": "string"
+      }
+    ],
+    "name": "submitAuditReport",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      },
+      {
+        "internalType": "enum IVaultPortalTypes.RiskLevel",
+        "name": "riskLevel",
+        "type": "uint8"
+      },
+      {
+        "internalType": "string",
+        "name": "ipfsCid",
+        "type": "string"
+      }
+    ],
+    "name": "submitFactoryAuditReport",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "taxToken",
+        "type": "address"
+      }
+    ],
+    "name": "tryGetVault",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "found",
+        "type": "bool"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "vault",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "vaultFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "internalType": "bool",
+            "name": "isOfficial",
+            "type": "bool"
+          },
+          {
+            "internalType": "enum IVaultPortalTypes.RiskLevel",
+            "name": "riskLevel",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct IVaultPortalTypes.VaultInfo",
+        "name": "info",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory",
+        "type": "address"
+      }
+    ],
+    "name": "vaultFactories",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "enabled",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "official",
+        "type": "bool"
+      },
+      {
+        "internalType": "enum IVaultPortalTypes.RiskLevel",
+        "name": "riskLevel",
+        "type": "uint8"
+      },
+      {
+        "internalType": "bytes29",
+        "name": "reserved",
+        "type": "bytes29"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

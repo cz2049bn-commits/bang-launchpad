@@ -1,0 +1,607 @@
+[
+  {
+    "type": "function",
+    "name": "newTokenV6",
+    "stateMutability": "payable",
+    "inputs": [
+      {
+        "name": "params",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "type": "string"
+          },
+          {
+            "name": "dexThresh",
+            "type": "uint8"
+          },
+          {
+            "name": "salt",
+            "type": "bytes32"
+          },
+          {
+            "name": "migratorType",
+            "type": "uint8"
+          },
+          {
+            "name": "quoteToken",
+            "type": "address"
+          },
+          {
+            "name": "quoteAmt",
+            "type": "uint256"
+          },
+          {
+            "name": "beneficiary",
+            "type": "address"
+          },
+          {
+            "name": "permitData",
+            "type": "bytes"
+          },
+          {
+            "name": "extensionID",
+            "type": "bytes32"
+          },
+          {
+            "name": "extensionData",
+            "type": "bytes"
+          },
+          {
+            "name": "dexId",
+            "type": "uint8"
+          },
+          {
+            "name": "lpFeeProfile",
+            "type": "uint8"
+          },
+          {
+            "name": "buyTaxRate",
+            "type": "uint16"
+          },
+          {
+            "name": "sellTaxRate",
+            "type": "uint16"
+          },
+          {
+            "name": "taxDuration",
+            "type": "uint64"
+          },
+          {
+            "name": "antiFarmerDuration",
+            "type": "uint64"
+          },
+          {
+            "name": "mktBps",
+            "type": "uint16"
+          },
+          {
+            "name": "deflationBps",
+            "type": "uint16"
+          },
+          {
+            "name": "dividendBps",
+            "type": "uint16"
+          },
+          {
+            "name": "lpBps",
+            "type": "uint16"
+          },
+          {
+            "name": "minimumShareBalance",
+            "type": "uint256"
+          },
+          {
+            "name": "dividendToken",
+            "type": "address"
+          },
+          {
+            "name": "commissionReceiver",
+            "type": "address"
+          },
+          {
+            "name": "tokenVersion",
+            "type": "uint8"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "token",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "quoteExactInput",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      {
+        "name": "params",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "inputToken",
+            "type": "address"
+          },
+          {
+            "name": "outputToken",
+            "type": "address"
+          },
+          {
+            "name": "inputAmount",
+            "type": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "outputAmount",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "swapExactInput",
+    "stateMutability": "payable",
+    "inputs": [
+      {
+        "name": "params",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "inputToken",
+            "type": "address"
+          },
+          {
+            "name": "outputToken",
+            "type": "address"
+          },
+          {
+            "name": "inputAmount",
+            "type": "uint256"
+          },
+          {
+            "name": "minOutputAmount",
+            "type": "uint256"
+          },
+          {
+            "name": "permitData",
+            "type": "bytes"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "outputAmount",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getTokenV8Safe",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "state",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "name": "reserve",
+            "type": "uint256"
+          },
+          {
+            "name": "circulatingSupply",
+            "type": "uint256"
+          },
+          {
+            "name": "price",
+            "type": "uint256"
+          },
+          {
+            "name": "tokenVersion",
+            "type": "uint8"
+          },
+          {
+            "name": "r",
+            "type": "uint256"
+          },
+          {
+            "name": "h",
+            "type": "uint256"
+          },
+          {
+            "name": "k",
+            "type": "uint256"
+          },
+          {
+            "name": "dexSupplyThresh",
+            "type": "uint256"
+          },
+          {
+            "name": "quoteTokenAddress",
+            "type": "address"
+          },
+          {
+            "name": "nativeToQuoteSwapEnabled",
+            "type": "bool"
+          },
+          {
+            "name": "extensionID",
+            "type": "bytes32"
+          },
+          {
+            "name": "buyTaxRate",
+            "type": "uint256"
+          },
+          {
+            "name": "sellTaxRate",
+            "type": "uint256"
+          },
+          {
+            "name": "pool",
+            "type": "address"
+          },
+          {
+            "name": "progress",
+            "type": "uint256"
+          },
+          {
+            "name": "lpFeeProfile",
+            "type": "uint8"
+          },
+          {
+            "name": "dexId",
+            "type": "uint8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getTokenV5",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "state",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "name": "reserve",
+            "type": "uint256"
+          },
+          {
+            "name": "circulatingSupply",
+            "type": "uint256"
+          },
+          {
+            "name": "price",
+            "type": "uint256"
+          },
+          {
+            "name": "tokenVersion",
+            "type": "uint8"
+          },
+          {
+            "name": "r",
+            "type": "uint256"
+          },
+          {
+            "name": "h",
+            "type": "uint256"
+          },
+          {
+            "name": "k",
+            "type": "uint256"
+          },
+          {
+            "name": "dexSupplyThresh",
+            "type": "uint256"
+          },
+          {
+            "name": "quoteTokenAddress",
+            "type": "address"
+          },
+          {
+            "name": "nativeToQuoteSwapEnabled",
+            "type": "bool"
+          },
+          {
+            "name": "extensionID",
+            "type": "bytes32"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getQuoteTokenConfiguration",
+    "stateMutability": "view",
+    "inputs": [
+      {
+        "name": "quoteToken",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "config",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "enabled",
+            "type": "uint8"
+          },
+          {
+            "name": "defaultCurve",
+            "type": "uint8"
+          },
+          {
+            "name": "alternativeCurve",
+            "type": "uint8"
+          },
+          {
+            "name": "nativeToQuoteSwapType",
+            "type": "uint8"
+          },
+          {
+            "name": "dexId",
+            "type": "uint8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getFeeRate",
+    "stateMutability": "view",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "buyFeeRate",
+        "type": "uint256"
+      },
+      {
+        "name": "sellFeeRate",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "version",
+    "stateMutability": "view",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "TokenCreated",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "ts",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "creator",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "nonce",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "token",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "indexed": false
+      },
+      {
+        "name": "symbol",
+        "type": "string",
+        "indexed": false
+      },
+      {
+        "name": "meta",
+        "type": "string",
+        "indexed": false
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "TokenBought",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "ts",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "token",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "buyer",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "eth",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "fee",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "postPrice",
+        "type": "uint256",
+        "indexed": false
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "TokenSold",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "ts",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "token",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "seller",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "eth",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "fee",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "postPrice",
+        "type": "uint256",
+        "indexed": false
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "TokenCurveSetV2",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "r",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "h",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "k",
+        "type": "uint256",
+        "indexed": false
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "TokenDexSupplyThreshSet",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "dexSupplyThresh",
+        "type": "uint256",
+        "indexed": false
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "FlapTokenCirculatingSupplyChanged",
+    "anonymous": false,
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "newSupply",
+        "type": "uint256",
+        "indexed": false
+      }
+    ]
+  }
+]

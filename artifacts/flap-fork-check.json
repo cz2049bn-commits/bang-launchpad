@@ -1,0 +1,13 @@
+{
+  "scope": "Local Anvil BSC fork only; no real deployment or financial transaction.",
+  "forkBlock": "129935863",
+  "checkedAt": "2026-10-26T17:16:07.567Z",
+  "success": true,
+  "gasUsed": "8535970",
+  "tokenCreated": true,
+  "vaultCreated": true,
+  "creatorPreserved": true,
+  "quote": "0x0000000000000000000000000000000000000000",
+  "vaultSpec": "v3",
+  "factorySpec": "v2.3"
+}

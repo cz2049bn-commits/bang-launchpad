@@ -1,0 +1,70 @@
+{
+  "chainId": 56,
+  "deployer": "0x5b259062e7F37586b8d415313D31BeDbF3044bC4",
+  "feeRecipient": "0x5b259062e7F37586b8d415313D31BeDbF3044bC4",
+  "launchpad": "0xB300F0cbc8044346fC0C054f8EEC4f3455C8dDcC",
+  "oracle": "0x64c9Dc1768EE0D166858648a23A94374A87fE424",
+  "registry": "0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F",
+  "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+  "lpBurn": "0x000000000000000000000000000000000000dEaD",
+  "sourceHash": "dab1387209e259dac968aa4ffb83b114ed070196e230ba87751907aeef016e26",
+  "launchpadCodeHash": "0x00ba38e26d58f4d701f2c3260627198a3644d29c7bf061e5c55ed441a0c29f51",
+  "oracleCodeHash": "0x95618c84627f0cb73f662c69cf64138e1b9a881514143d8242638690c0442e85",
+  "tokens": [
+    {
+      "name": "BANG",
+      "symbol": "BANG",
+      "imageURI": "https://bia-id.fun/token-assets/ca7e508e01a871d9707ba40e2135f09c168da495ad859c71d3cdc6b377cfd7fe.png",
+      "metadataURI": "https://bia-id.fun/token-assets/50a6925c5c3652e792ed8ba939207352830ee90ff2edc1018865d1720a0c8059.json",
+      "quote": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+      "targetBNB": "13.5",
+      "initialBuy": "0",
+      "predicted": "0x3e80D6cf2Efe889fDa9Ef4C9F5c1737Cc3553Ea0",
+      "address": "0x3e80D6cf2Efe889fDa9Ef4C9F5c1737Cc3553Ea0"
+    },
+    {
+      "name": "GB",
+      "symbol": "GB",
+      "imageURI": "https://bia-id.fun/token-assets/ca7e508e01a871d9707ba40e2135f09c168da495ad859c71d3cdc6b377cfd7fe.png",
+      "metadataURI": "https://bia-id.fun/token-assets/8952ac6e9cf45f108912f6fe191816b4281367923f093fadd7115f316644a1fa.json",
+      "quote": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+      "targetBNB": "13.5",
+      "initialBuy": "0",
+      "predicted": "0x4dA83A037b83e07D7EF5c7ffd9Ed49Aba5A47897",
+      "address": "0x4dA83A037b83e07D7EF5c7ffd9Ed49Aba5A47897"
+    }
+  ],
+  "transactions": [
+    {
+      "label": "Deploy immutable quote oracle",
+      "hash": "0x2e04847ba618781df4a2b918b2ad89a22e6ce4e5ac6c39d2d2f5a64d80ee5b98",
+      "block": "130056653",
+      "gasCostBNB": "0.0001456498",
+      "address": "0x64c9Dc1768EE0D166858648a23A94374A87fE424"
+    },
+    {
+      "label": "Deploy ownerless BANG launchpad",
+      "hash": "0x8d2032d3abc2bb7f4e7944ac4ac1eef22a33a1211630a58a01241bef259be7f4",
+      "block": "130056659",
+      "gasCostBNB": "0.0003253424",
+      "address": "0xB300F0cbc8044346fC0C054f8EEC4f3455C8dDcC"
+    },
+    {
+      "label": "Create BANG",
+      "hash": "0x7d42a3517a3ebc361d04161c594dfdb8f221f71a36e6fd18f9bb5db9709e9cad",
+      "block": "130056666",
+      "gasCostBNB": "0.0001155939",
+      "address": "0x3e80D6cf2Efe889fDa9Ef4C9F5c1737Cc3553Ea0"
+    },
+    {
+      "label": "Create GB",
+      "hash": "0xa345cc8c64ac3eba319c1f5330d2385aa5e71fa50102a5102a6f1244d5f6b910",
+      "block": "130056673",
+      "gasCostBNB": "0.0001138791",
+      "address": "0x4dA83A037b83e07D7EF5c7ffd9Ed49Aba5A47897"
+    }
+  ],
+  "sourceRepository": "https://github.com/cz2049bn-commits/bang-launchpad",
+  "deployedAt": "2026-10-27T08:22:29.121Z",
+  "initialBuy": "0"
+}

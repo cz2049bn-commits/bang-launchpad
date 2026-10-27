@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-26T16:58:52.865Z",
+  "chainId": 56,
+  "block": "129933564",
+  "checks": [
+    {
+      "name": "Portal",
+      "address": "0xe2cE6ab80874Fa9Fa2aAE65D277Dd6B8e65C9De0",
+      "bytes": 2882,
+      "codeHash": "0x0a3fe6f701ee3cb432f45912e054896327ce5902337eae4d62d01406005a91c3"
+    },
+    {
+      "name": "VaultPortal",
+      "address": "0x90497450f2a706f1951b5bdda52B4E5d16f34C06",
+      "bytes": 2882,
+      "codeHash": "0xf621f30c3a81d94398018701330fe848452f19c9865bf3437a6dd666977b01fe"
+    },
+    {
+      "name": "Guardian",
+      "address": "0x9e27098dcD8844bcc6287a557E0b4D09C86B8a4b",
+      "bytes": 2882,
+      "codeHash": "0xf621f30c3a81d94398018701330fe848452f19c9865bf3437a6dd666977b01fe"
+    }
+  ],
+  "scope": "Read-only contract presence. No BANG deployment or real launch was performed."
+}

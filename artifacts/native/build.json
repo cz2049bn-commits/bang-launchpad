@@ -1,0 +1,24 @@
+{
+  "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+  "optimizer": {
+    "enabled": true,
+    "runs": 200
+  },
+  "evmVersion": "paris",
+  "viaIR": true,
+  "sourceHash": "dab1387209e259dac968aa4ffb83b114ed070196e230ba87751907aeef016e26",
+  "sizes": {
+    "BANGToken": {
+      "initcode": 4966,
+      "runtime": 3014
+    },
+    "BANGLaunchpad": {
+      "initcode": 15179,
+      "runtime": 14651
+    },
+    "BANGQuoteOracle": {
+      "initcode": 6671,
+      "runtime": 4004
+    }
+  }
+}

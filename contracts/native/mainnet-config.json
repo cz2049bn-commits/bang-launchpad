@@ -1,0 +1,51 @@
+{
+  "chainId": 56,
+  "registry": "0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F",
+  "wbnb": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+  "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+  "v3Factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+  "bridge": {
+    "symbol": "USDT",
+    "address": "0x55d398326f99059fF775485246999027B3197955",
+    "decimals": 18,
+    "pool": "0x172fcD41E0913e95784454622d1c3724f546f849",
+    "minLiquidity": "55777815360302503174483",
+    "kind": "stablecoin"
+  },
+  "assets": [
+    {
+      "symbol": "NVDAB",
+      "address": "0x02fca66c1d1afb4e2a7884261eb00f63598a7436",
+      "decimals": 18,
+      "pool": "0x8FB4243b553aC29BA088aCf00B9B7dA24bD6690C",
+      "minLiquidity": "41031596803542957112328",
+      "kind": "bstock"
+    },
+    {
+      "symbol": "TSLAB",
+      "address": "0x5b1910eaad6450e50f816082aa078c41f10c292f",
+      "decimals": 18,
+      "pool": "0xB0f5E5400E8F0F7C242F2b7740C004f020579c41",
+      "minLiquidity": "8434406403984996547361",
+      "kind": "bstock"
+    },
+    {
+      "symbol": "SPCXB",
+      "address": "0xbe9d156892e55e7154bcd3cb0fea677f9d3103e1",
+      "decimals": 18,
+      "pool": "0x977DaFFC095b33872E2741c19568925015C35b4d",
+      "minLiquidity": "6927074979641508157988",
+      "kind": "bstock"
+    },
+    {
+      "symbol": "QQQB",
+      "address": "0x205812cdbed920aff76c6580abd681a46d11efc7",
+      "decimals": 18,
+      "pool": "0xe531fcb1F5a195de7608B9F4f9518544C2cdB693",
+      "minLiquidity": "2666610249534093365629",
+      "kind": "bstock"
+    }
+  ],
+  "source": "https://www.binance.com/bapi/defi/v1/public/wallet-direct/buw/wallet/market/token/rwa/stock/detail/list/ai?type=3",
+  "checkedAt": "2026-10-27T07:33:41.729Z"
+}
